@@ -15,18 +15,23 @@
 static int	is_number(char *str)
 {
 	int	i;
+	int	digits;
 
 	i = 0;
+	digits = 0;
+	while (str[i] == ' ')
+		i++;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	if (!str[i])
-		return (1);
-	while (str[i])
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[i] < '0' || str[i] > '9')
-			return (1);
+		digits++;
 		i++;
 	}
+	while (str[i] == ' ')
+		i++;
+	if (str[i] || !digits)
+		return (1);
 	return (0);
 }
 

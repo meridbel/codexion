@@ -97,5 +97,6 @@ void	register_waiter(t_data *data, t_coder *coder);
 void	dongle_release(t_data *data, t_dongle *d);
 int		try_take_both(t_data *data, t_coder *coder);
 int		try_take_single(t_data *data, t_coder *coder);
+void	smart_sleep(long time, t_data *data);
 
 # endif
